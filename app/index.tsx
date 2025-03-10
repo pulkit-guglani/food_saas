@@ -1,13 +1,30 @@
-import { Image, StyleSheet, Platform, View } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Platform,
+  View,
+  ActivityIndicator,
+} from "react-native";
 
 import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Link } from "expo-router";
+import { Link, Redirect } from "expo-router";
+import { useUser } from "@/lib/queries";
 
 export default function HomeScreen() {
+  const { data: user, isFetching: loading } = useUser();
+
+  if (loading) {
+    return <ActivityIndicator />;
+  }
+
+  if (!user) {
+    return <Redirect href={"/login"} />;
+  }
+
   return (
     <SafeAreaView>
       <View className="flex w-full justify-center flex-row">
