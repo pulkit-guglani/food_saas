@@ -8,6 +8,7 @@ interface TextFieldProps {
   value: string;
   onChangeText: (text: string) => void;
   secureTextEntry?: boolean;
+  className?: string;
 }
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -16,6 +17,7 @@ const TextField: React.FC<TextFieldProps> = ({
   value,
   onChangeText,
   secureTextEntry = false,
+  className,
 }) => {
   const handleChangeText = (text: string) => {
     if (onChangeText) {
@@ -24,15 +26,15 @@ const TextField: React.FC<TextFieldProps> = ({
   };
 
   return (
-    <View className="my-2">
+    <View className={`${className}`}>
       {label && <Text className="mb-1 text-lg text-gray-800">{label}</Text>}
       <TextInput
         style={{
           height: 40,
           borderWidth: 1,
           borderColor: "#D1D5DB",
-          borderRadius: 4,
-          paddingHorizontal: 12,
+          borderRadius: 8,
+          paddingHorizontal: 16,
         }}
         placeholder={placeholder}
         value={value}

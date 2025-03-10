@@ -221,7 +221,8 @@ module.exports = {
         caption_bold: ["12px", fontWeight.bold],
       },
       fontFamily: {
-        inter: ["Inter-Regular"],
+        inter: ["Inter"],
+        metro: ["metro"],
       },
       colors: colors,
     },

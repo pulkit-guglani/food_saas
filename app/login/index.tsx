@@ -9,6 +9,8 @@ import { StatusBar } from "expo-status-bar";
 import TextField from "@/components/ui/TextField";
 import { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
+import Button from "@/components/ui/Button";
+import Text from "@/components/ui/Text";
 
 export default function Login() {
   const [number, setNumber] = useState("");
@@ -16,19 +18,44 @@ export default function Login() {
   return (
     <SafeAreaView className="h-full">
       <StatusBar animated style="light" />
-      <View className="px-6 h-full">
-        <View className="flex flex-col justify-center h-full">
-          <p className="text-h2_semibold">
+      <View className="px-6 h-full flex flex-col">
+        <View className="flex flex-col justify-center flex-1">
+          <Text className="text-h2_semibold">
             Order directly from nearby food stalls
-          </p>
-          <p className="text-label_medium text-grayscale_600 mt-[84px]">
+          </Text>
+
+          <Text className="text-label_medium text-grayscale_600 mt-[84px]">
             Log in or sign up
-          </p>
-          <TextField
-            value={number}
-            placeholder="Enter mobile number"
-            onChangeText={setNumber}
-          />
+          </Text>
+          <View className="mt-2">
+            <View className="h-full flex items-center absolute justify-center flex-col ml-2">
+              <Text className="text-label_medium text-grayscale_800">+91</Text>
+            </View>
+            <TextInput
+              style={{
+                height: 52,
+                borderWidth: 1,
+                borderColor: "#D1D5DB",
+                borderRadius: 8,
+                paddingHorizontal: 16,
+                paddingLeft: 40,
+              }}
+              inputMode="tel"
+              placeholder={"Enter mobile number"}
+              value={number}
+              onChangeText={setNumber}
+              placeholderTextColor={"#677990"}
+            />
+          </View>
+          <Button className="mt-10" onPress={() => {}}>
+            Continue
+          </Button>
+        </View>
+        <View className="w-full flex flex-row justify-center items-center p-9">
+          <Text className="text-label_medium"> Already have an account?</Text>
+          <Button type="primary" textOnly onPress={() => {}}>
+            Sign In
+          </Button>
         </View>
       </View>
     </SafeAreaView>
