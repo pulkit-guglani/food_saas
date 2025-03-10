@@ -10,38 +10,52 @@ type ButtonProps = {
   children: ReactNode;
   className?: string;
   textOnly?: boolean;
+  fullWidth?: boolean;
 };
 
 const Button = (props: ButtonProps) => {
-  const { onPress, children, type = "primary", textOnly, className } = props;
+  const {
+    onPress,
+    children,
+    type = "primary",
+    textOnly,
+    fullWidth,
+    className,
+  } = props;
 
-  const styles = StyleSheet.create({
+  const buttonStyle = StyleSheet.create({
     primary: {
       backgroundColor: textOnly ? "" : "#FE8C00",
       padding: textOnly ? 8 : 16,
       borderRadius: 9999,
-      width: "100%",
-      color: textOnly ? "#FE8C00" : "#fff",
       display: "flex",
       flexDirection: "row",
+      width: "auto",
+      justifyContent: "center",
+      alignSelf: fullWidth ? "stretch" : "flex-start",
+    },
+    secondary: {},
+    tertiary: {},
+  });
+  const textStyle = StyleSheet.create({
+    primary: {
+      color: textOnly ? "#FE8C00" : "#fff",
+
       fontWeight: textOnly ? "600" : "500",
       fontSize: 14,
-      justifyContent: "center",
     },
-    secondary: {
-      backgroundColor: "#fff",
-
-      borderWidth: 1,
-    },
-    tertiary: {
-      backgroundColor: "transparent",
-    },
+    secondary: {},
+    tertiary: {},
   });
 
   return (
     <View className={className}>
-      <TouchableOpacity onPress={onPress} style={styles?.[type]}>
-        {children}
+      <TouchableOpacity
+        activeOpacity={0.6}
+        onPress={onPress}
+        style={[buttonStyle?.[type], { opacity: 1 }]}
+      >
+        <Text style={textStyle?.[type]}>{children}</Text>
       </TouchableOpacity>
     </View>
   );

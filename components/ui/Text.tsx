@@ -13,11 +13,7 @@ interface TextProps extends RNTextProps {
 const Text: React.FC<TextProps> = (props) => {
   const { children, className, ...rest } = props;
   return (
-    <RNText
-      style={{ fontFamily: "metro" }}
-      {...rest}
-      className={`${className}`}
-    >
+    <RNText {...rest} className={className}>
       {children}
     </RNText>
   );

@@ -22,7 +22,14 @@ export default function RootLayout() {
   const [loaded] = useFonts({
     // SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     Inter: require("../assets/fonts/Inter-Regular.otf"),
-    metro: require("../assets/fonts/Metropolis-Regular.otf"),
+    "Inter-SemiBold": require("../assets/fonts/Inter-SemiBold.otf"),
+    "Inter-Medium": require("../assets/fonts/Inter-Medium.otf"),
+    "Inter-Bold": require("../assets/fonts/Inter-Bold.otf"),
+
+    Metropolis: require("../assets/fonts/Metropolis-Regular.otf"),
+    "Metropolis-SemiBold": require("../assets/fonts/Metropolis-SemiBold.otf"),
+    "Metropolis-Medium": require("../assets/fonts/Metropolis-Medium.otf"),
+    "Metropolis-Bold": require("../assets/fonts/Metropolis-Bold.otf"),
   });
 
   useEffect(() => {

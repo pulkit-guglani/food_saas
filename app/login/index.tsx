@@ -8,7 +8,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import TextField from "@/components/ui/TextField";
 import { useState } from "react";
-import { TextInput } from "react-native-gesture-handler";
+import { TextInput } from "react-native";
 import Button from "@/components/ui/Button";
 import Text from "@/components/ui/Text";
 
@@ -17,7 +17,7 @@ export default function Login() {
 
   return (
     <SafeAreaView className="h-full">
-      <StatusBar animated style="light" />
+      <StatusBar animated style="dark" />
       <View className="px-6 h-full flex flex-col">
         <View className="flex flex-col justify-center flex-1">
           <Text className="text-h2_semibold">
@@ -47,13 +47,15 @@ export default function Login() {
               placeholderTextColor={"#677990"}
             />
           </View>
-          <Button className="mt-10" onPress={() => {}}>
-            Continue
-          </Button>
+          <View className="w-full">
+            <Button className="mt-10 min-w-full" fullWidth onPress={() => {}}>
+              Continue
+            </Button>
+          </View>
         </View>
         <View className="w-full flex flex-row justify-center items-center p-9">
           <Text className="text-label_medium"> Already have an account?</Text>
-          <Button type="primary" textOnly onPress={() => {}}>
+          <Button type="primary" className="w-fit" textOnly onPress={() => {}}>
             Sign In
           </Button>
         </View>
