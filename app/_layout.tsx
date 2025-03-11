@@ -50,7 +50,10 @@ export default function RootLayout() {
       <ThemeProvider
         value={colorScheme === "dark" ? DefaultTheme : DefaultTheme}
       >
-        <View className="flex-1 font-inter">
+        <View
+          className="flex-1 font-inter"
+          style={{ backgroundColor: "white" }}
+        >
           <Stack>
             <Stack.Screen name="index" options={{ headerShown: false }} />
             <Stack.Screen name="login/index" options={{ headerShown: false }} />
