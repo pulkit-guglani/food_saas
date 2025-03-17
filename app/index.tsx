@@ -16,6 +16,7 @@ import { useUser } from "@/lib/queries";
 import Text from "@/components/ui/Text";
 import { colorScheme } from "nativewind";
 import { StatusBar } from "expo-status-bar";
+import FoodCategoriesScrollView from "@/components/ui/FoodCategoryScrollView";
 
 export default function HomeScreen() {
   const { data: user, isFetching: loading } = useUser();
@@ -41,24 +42,8 @@ export default function HomeScreen() {
     >
       <StatusBar animated style="light" backgroundColor={"black"} />
 
-      <View className="flex gap-10">
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
-        <Text className="text-grayscale_100">LOL sdf dsf ds fds fsd fs fd</Text>
+      <View className="flex gap-10 bg-white">
+        <FoodCategoriesScrollView onPress={() => {}} />
       </View>
     </ParallaxScrollView>
   );
